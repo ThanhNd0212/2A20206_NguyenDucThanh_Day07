@@ -131,7 +131,7 @@ chunks = chunker.chunk(text)
 ### So Sánh Với Thành Viên Khác
 
 | Thành viên | Strategy | Retrieval Score (/10) | Điểm mạnh | Điểm yếu |
-|-----------|----------|-----------|----------|
+|-----------|----------|-----------|-----------|----------|
 | Nguyễn Đức Thành (tôi) | RecursiveChunker(200) + gemini-embedding-2| 10/10 | Bám ranh giới đoạn văn, chunk nhỏ | Chunk count lớn → chi phí embedding cao |
 | Đặng Minh Hải - 2A202600713 | Article-level chunks + `source/topic` filter + OpenAI embeddings | 10 / 10 | Top-1 đúng ở 5/5 queries; metadata giảm nhiễu giữa nhiều file nguồn | Bài dài như ESPN cần đọc evidence kỹ hơn |
 | Hoàng Phúc Quân - 2A202600560 | SentenceChunker (`by_sentences`, `max_sentences_per_chunk=3`) + OpenAI embeddings | 10 / 10 | Top-1 đúng ở 5/5 queries; chunk ngắn, dễ đọc, giữ evidence rõ | Corpus tăng từ 37 docs lên 144 chunks, chi phí embed/search cao hơn |
