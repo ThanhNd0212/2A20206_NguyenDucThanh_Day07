@@ -1,8 +1,8 @@
 # Báo Cáo Lab 7: Embedding & Vector Store
 
 **Họ tên:** Nguyễn Đức Thành
-**Nhóm:** *(để trống)*
-**Ngày:** *(để trống)*
+**Nhóm:** Đặng Minh Hải - 2A202600713; Hoàng Phúc Quân - 2A202600560; Nguyễn Đức Thành - 2A202600838 
+**Ngày:** 2026-06-05
 
 ---
 
