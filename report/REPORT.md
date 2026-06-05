@@ -139,7 +139,7 @@ chunks = chunker.chunk(text)
 **Strategy nào tốt nhất cho domain này? Tại sao?**
 Hai strategy tốt nhất trong nhóm là của Đặng Minh Hải và Hoàng Phúc Quân vì đều đạt 10/10. Với corpus đa nguồn hiện tại, article-level chunking có lợi thế đơn giản và tận dụng metadata `source/topic`, còn SentenceChunker có lợi thế evidence rõ hơn, đặc biệt ở bài ESPN dài. Strategy của Nguyễn Đức Thành tăng lên 10/10 nhờ filter theo source/topic, nhưng Chunk count lớn → chi phí embedding cao.
 
-** Cá nhân tôi còn triển khai thêm `SectionChunker` tách text tại ranh giới section header:
+** Cá nhân tôi còn triển khai thêm `SectionChunker` tách text tại ranh giới section header: **
 - Markdown headers: `^#{1,6} ` (e.g. `## Overview`)
 - Underlined headers: dòng text theo sau bởi `===` hoặc `---`
 
