@@ -69,7 +69,7 @@ num_chunks = ceil((10000 - 100) / (500 - 100))
 | 1 | sports_dataset.md | VnExpress (10 bài) | 27.843 | source, lang=vi |
 | 2 | sports_articles_multisource_clean.md | Tuổi Trẻ, VietnamNet, VOV, Reuters | 11.359 | source, lang=vi |
 | 3 | web-the-thao-paper1.txt | WebTheThao (NBA Finals 2026) | 3.218 | source, lang=vi |
-| 4 | tin-tuc-DaNang-Dragons.txt | Tin tức địa phương | 1.975 | source, lang=vi |
+| 4 | tin-tuc-DaNang-Dragons.txt | Facebook | 1.975 | source, lang=vi |
 | 5 | espn-paper-2.txt | ESPN | 10.182 | source, lang=en |
 | 6 | espn-paper-1.txt | ESPN | 13.412 | source, lang=en |
 
