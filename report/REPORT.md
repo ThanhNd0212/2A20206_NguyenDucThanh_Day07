@@ -64,14 +64,19 @@ num_chunks = ceil((10000 - 100) / (500 - 100))
 
 ### Data Inventory
 
-| # | Tên tài liệu | Nguồn | Số ký tự | Metadata đã gán |
-|---|--------------|-------|----------|-----------------|
-| 1 | sports_dataset.md | VnExpress (10 bài) | 27.843 | source, lang=vi |
-| 2 | sports_articles_multisource_clean.md | Tuổi Trẻ, VietnamNet, VOV, Reuters | 11.359 | source, lang=vi |
-| 3 | web-the-thao-paper1.txt | WebTheThao (NBA Finals 2026) | 3.218 | source, lang=vi |
-| 4 | tin-tuc-DaNang-Dragons.txt | Facebook | 1.975 | source, lang=vi |
-| 5 | espn-paper-2.txt | ESPN | 10.182 | source, lang=en |
-| 6 | espn-paper-1.txt | ESPN | 13.412 | source, lang=en |
+Nguồn chính là các file thể thao trong `data/`. Tôi không dùng các file không thuộc domain thể thao như `python_intro.txt`, `rag_system_design.md`, `vector_store_notes.md`, `vi_retrieval_notes.md`, `customer_support_playbook.txt`. Tôi cũng không đưa `data/articles_clean.md` vào default corpus vì nó là bản markdown duplicate của `data/articles_clean.jsonl`.
+
+| # | File nguồn | Số document sau khi load | Nội dung chính | Metadata đã gán |
+|---|------------|--------------------------|----------------|-----------------|
+| 1 | `data/articles_clean.jsonl` | 10 | Dân trí thể thao: Asian Cup, World Cup 2026, U19 Việt Nam, Premier League | `source`, `url`, `title`, `published_at`, `author`, `category`, `topic`, `tags`, `entities` |
+| 2 | `data/sports_articles_multisource_clean.md` | 13 | Dataset multi-source: Roland Garros, Australian Open, World Cup 2026, bóng chuyền, ASIAD | `source`, `title`, `topic`, `category`, `entities`, `published` |
+| 3 | `data/sports_dataset.md` | 10 | Dataset tổng hợp nhiều môn: tennis, NBA, bơi, F1, cầu lông, điền kinh, cycling, boxing, gymnastics | `source`, `title`, `topic`, `tournament`, `tags`, `author` |
+| 4 | `data/espn-paper-1.txt` | 1 | ESPN NBA Finals: ký ức Knicks thập niên 1990 và Jalen Brunson | `source`, `title`, `author`, `published_at`, `category`, `language`, `url` |
+| 5 | `data/espn-paper-2.txt` | 1 | ESPN NBA Finals Game 1: Knicks thắng Spurs 105-95 | `source`, `title`, `author`, `published_at`, `category`, `language`, `url` |
+| 6 | `data/tin-tuc-DaNang-Dragons.txt` | 1 | Bài về Danang Dragons, Saigon Heat và Karachi Edo tại VBA 2026 | `source`, `title`, `author`, `published_at`, `category`, `language`, `url` |
+| 7 | `data/web-the-thao-paper1.txt` | 1 | Web Thể Thao NBA Finals: CĐV lao vào sân chụp ảnh với Victor Wembanyama | `source`, `title`, `author`, `published_at`, `category`, `language`, `url` |
+
+Tổng corpus sau khi chạy `python3 main.py`: **37 documents** và được lưu embedding vào `data/embedding_store.json`.
 
 ### Metadata Schema (của Nguyễn Đức Thành,tôi)
 
@@ -90,7 +95,7 @@ num_chunks = ceil((10000 - 100) / (500 - 100))
 
 ### Baseline Analysis
 
-Chạy `ChunkingStrategyComparator().compare(text, chunk_size=200)` trên 3 tài liệu:
+Chạy `ChunkingStrategyComparator().compare(text, chunk_size=200)` trên 2 tài liệu:
 
 | Tài liệu | Strategy | Chunk Count | Avg Length | Preserves Context? |
 |-----------|----------|-------------|------------|-------------------|
