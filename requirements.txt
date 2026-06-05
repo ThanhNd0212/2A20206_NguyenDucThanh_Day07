@@ -6,10 +6,13 @@ python-dotenv>=1.0
 #   pip install sentence-transformers
 # Install OpenAI embedder support with:
 #   pip install openai
-# Install both optional embedders with:
-#   pip install openai sentence-transformers
+# Install Gemini embedder + LLM support with:
+#   pip install google-genai
+# Install all optional embedders with:
+#   pip install openai sentence-transformers google-genai
 # sentence-transformers>=3.0
 # openai>=1.0
+# google-genai>=1.0
 
-# Optional: for bonus tasks
-# chromadb>=0.4.0      # Real vector database integration
+Optional: for bonus tasks
+chromadb>=0.4.0      # Real vector database integration
